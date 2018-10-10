@@ -4,7 +4,8 @@
 ## Account Management
 
 ----------------------
-## Account Information
+## Account Details
+Details showing page.
 
 ----------------------
 ## Channel List & Entry
@@ -33,6 +34,9 @@ A channel with sequence mode permits joiner to speak without interruption when o
 
 ### Moji Animation Data
 ### Voice Data
+
+### About Privacy
+Server **DOES NOT** save any data on disks. All messages will be encrypted by asymmetric encryption(such as RSA) before sending to server - this ensure nobody knows the message content except receivers. More details in [encrypted communication](./encryption.md).
 
 -----------------------
 ## Ban of Spammer
