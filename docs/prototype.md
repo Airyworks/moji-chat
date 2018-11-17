@@ -1,4 +1,4 @@
-## Login & Logout
+## Login & Logout & Register
 
 ----------------------
 ## Account Management
@@ -36,7 +36,10 @@ A channel with sequence mode permits joiner to speak without interruption when o
 ### Voice Data
 
 ### About Privacy
-Server **DOES NOT** save any data on disks. All messages will be encrypted by asymmetric encryption(such as RSA) before sending to server - this ensure nobody knows the message content except receivers. More details in [encrypted communication](./encryption.md).
+Server **DOES NOT** save any data on remote disks. All messages will be encrypted by asymmetric encryption(such as RSA) before sending to server - this ensure nobody knows the message content except receivers. More details in [encrypted communication](./encryption.md).
+
+-----------------------
+## Setting
 
 -----------------------
 ## Ban of Spammer

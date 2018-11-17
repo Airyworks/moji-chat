@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <v-app>
     <router-view/>
-  </div>
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -15,13 +14,19 @@ import Component from 'vue-class-component'
 export default class App extends Vue {}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+@font-face
+  font-family STXIHEI
+  src url(assets/fonts/STXIHEI.ttf)
+  font-weight normal
+  font-style normal
+
+body
+  &::-webkit-scrollbar
+    display none
+  -ms-overflow-style none
+
+span, p
+  font-family STXIHEI, Arial, Helvetica, sans-serif
 </style>
+

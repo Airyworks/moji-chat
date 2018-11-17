@@ -1,15 +1,38 @@
 import Vue, { AsyncComponent } from 'vue'
 import Router, { RouteConfig, Route, NavigationGuard } from 'vue-router'
 
-const HelloWorld: AsyncComponent = (): any => import('@/components/HelloWorld.vue')
+import SignIn from '@/components/sign/SignIn.vue'
+import SignUp from '@/components/sign/SignUp.vue'
+import Channel from '@/components/main/Channel.vue'
+import ChannelList from '@/components/main/ChannelList.vue'
+
 
 Vue.use(Router)
 
 const routes: RouteConfig[] = [
   {
     path: '/',
-    name: 'HelloWorld',
-    component: HelloWorld
+    component: Channel
+  },
+  {
+    path: 'signin',
+    name: 'SignIn',
+    component: SignIn
+  },
+  {
+    path: 'signup',
+    name: 'SignUp',
+    component: SignUp
+  },
+  {
+    path: 'channel',
+    name: 'Channel',
+    component: Channel
+  },
+  {
+    path: 'channellist',
+    name: 'ChannelList',
+    component: ChannelList
   }
 ]
 
