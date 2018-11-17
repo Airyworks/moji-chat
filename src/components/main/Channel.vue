@@ -1,6 +1,6 @@
 <template>
   <v-container class="container" fill-height fluid align-start>
-    <v-layout fill-height row wrap>
+    <v-layout row>
 
       <v-flex xs8 grow offset-xs1 d-flex>
         <v-layout column wrap>
@@ -28,29 +28,25 @@
         </v-layout>
       </v-flex>
 
-      <v-flex xs2 grow d-flex>
-        <v-layout column wrap>
+      <v-flex xs2 d-flex>
+        <v-layout column>
           <v-flex px-3 xs1>
             <div class="rd block center back" v-ripple flat>
               <v-icon class="content al-center" large>keyboard_arrow_left</v-icon>
             </div>
           </v-flex>
-          <v-flex xs10>
-            <v-layout fill-height column wrap>
-              <v-flex px-3 py-3 xs9 style="overflow: hidden">
-                <div class="rd block logs">
-                  <div v-for="i in shownLogs" :key="i.id">
-                    <p class="log-name">{{i.name + ':'}}</p>
-                    <p class="log-content">{{i.content}}</p>
-                  </div>
-                </div>
-              </v-flex>
-              <v-flex px-3 pb-3 xs3>
-                <div class="rd block">
-                  hnfhgnejld
-                </div>
-              </v-flex>
-            </v-layout>
+          <v-flex px-3 py-3 xs7 style="overflow: hidden">
+            <div class="rd block logs">
+              <div v-for="i in shownLogs" :key="i.id">
+                <p class="log-name">{{i.name + ':'}}</p>
+                <p class="log-content">{{i.content}}</p>
+              </div>
+            </div>
+          </v-flex>
+          <v-flex px-3 pb-3 xs3>
+            <div class="rd block">
+              hnfhgnejld
+            </div>
           </v-flex>
         </v-layout>
       </v-flex>
@@ -126,6 +122,7 @@ export default class Channel extends Vue {
   width 100%
   height 100%
   user-select none
+  flex-shrink 1
 
 .center
   align-items center
