@@ -37,7 +37,7 @@
           </v-flex>
           <v-flex xs10>
             <v-layout fill-height column wrap>
-              <v-flex px-3 py-3 xs9 style="overflow: scoll">
+              <v-flex px-3 py-3 xs9 style="overflow: hidden">
                 <div class="rd block logs">
                   <div v-for="i in shownLogs" :key="i.id">
                     <p class="log-name">{{i.name + ':'}}</p>
