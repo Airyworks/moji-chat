@@ -36,7 +36,7 @@
             </div>
           </v-flex>
           <v-flex px-3 py-3 xs7 style="overflow: hidden">
-            <div class="rd block logs">
+            <div class="rd block logs" id="ch-logs" >
               <div v-for="i in shownLogs" :key="i.id">
                 <p class="log-name">{{i.name + ':'}}</p>
                 <p class="log-content">{{i.content}}</p>
@@ -45,7 +45,13 @@
           </v-flex>
           <v-flex px-3 pb-3 xs3>
             <div class="rd block">
-              hnfhgnejld
+              <v-textarea
+                flat
+                no-resize
+                hide-details
+                name="input-7-1"
+                value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+              ></v-textarea>
             </div>
           </v-flex>
         </v-layout>
@@ -59,8 +65,25 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
+function scrollToBottom () {
+  requestAnimationFrame(() => {
+    const el = document.getElementById('ch-logs')
+    if (el && el.childElementCount) {
+      const last = el.children[el.childElementCount - 1]
+      if (last) {
+        last.scrollIntoView({ block: 'end', behavior: 'smooth' })
+      }
+    }
+  })
+}
+
 @Component({
-  name: 'channel'
+  name: 'channel',
+  watch: {
+    logs () {
+      scrollToBottom()
+    }
+  }
 })
 export default class Channel extends Vue {
   channelName = 'MapleStory free talk'
@@ -80,16 +103,16 @@ export default class Channel extends Vue {
     { id: 13698, uid: 3, content: 'hi~', ts: '2018-09-30 00:36:05' },
     { id: 16124, uid: 8, content: 'i\'m new here 😘', ts: '2018-10-01 00:31:25' },
     { id: 19102, uid: 3, content: 'nice to meet u', ts: '2018-10-02 00:31:25' },
-    { id: 20102, uid: 3, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
+    { id: 20102, uid: 3, content: 'the essence of human is repeater long long long long long long text', ts: '2018-10-02 00:31:25' },
     { id: 21102, uid: 5, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
     { id: 42102, uid: 2, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
     { id: 13102, uid: 8, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
     { id: 15102, uid: 1, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
-    { id: 15102, uid: 4, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
-    { id: 15102, uid: 6, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
-    { id: 15102, uid: 7, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
-    { id: 15102, uid: 2, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
-    { id: 15102, uid: 5, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' }
+    { id: 15112, uid: 4, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
+    { id: 15142, uid: 6, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
+    { id: 15172, uid: 7, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
+    { id: 15192, uid: 2, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' },
+    { id: 151322, uid: 5, content: 'the essence of human is repeater', ts: '2018-10-02 00:31:25' }
   ]
   get shownLogs () {
     return this.logs.map(log => {
@@ -157,7 +180,11 @@ p               // scoped
   margin-bottom 0
 
 .logs
-  overflow scroll
+  overflow-y scroll
+  overflow-x hidden
+  &::-webkit-scrollbar
+    display none
+  -ms-overflow-style none
 
 .log-name
   margin-top 10px

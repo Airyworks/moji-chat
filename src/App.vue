@@ -26,7 +26,8 @@ body
     display none
   -ms-overflow-style none
 
-span, p
+span, p, textarea
   font-family STXIHEI, Arial, Helvetica, sans-serif
+  color #585858
 </style>
 

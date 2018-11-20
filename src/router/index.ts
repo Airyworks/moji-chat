@@ -12,7 +12,7 @@ Vue.use(Router)
 const routes: RouteConfig[] = [
   {
     path: '/',
-    component: Channel
+    component: ChannelList
   },
   {
     path: 'signin',
